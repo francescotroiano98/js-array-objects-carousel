@@ -27,11 +27,10 @@ images.forEach((element, index) => {
 
     const newDiv = document.createElement("div");
     newDiv.classList.add("h-100")
+    newDiv.classList.add("d-none");
     
     if (index === 0) {
-        newDiv.classList.add("d-block");
-    } else {
-        newDiv.classList.add("d-none");
+        newDiv.classList.remove("d-none");
     }
 
     // Create the first div with the background image
@@ -63,10 +62,22 @@ images.forEach((element, index) => {
     carousel.appendChild(newDiv);
 });
 
+let currentIndex = 0;
+
 const forwardButton = document.getElementById("right");
+
 
 forwardButton.addEventListener("click", function(){
 
-    
 
-})
+
+});
+
+const backButton = document.getElementById("left");
+
+
+backButton.addEventListener("click", function(){
+
+
+
+});
