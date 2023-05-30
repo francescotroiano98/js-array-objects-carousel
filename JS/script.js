@@ -33,7 +33,7 @@ images.forEach((element, index) => {
         newDiv.classList.remove("d-none");
     }
 
-    // Create the first div with the background image
+    // Creato il primo div per metterci l'immagine
     const backgroundDiv = document.createElement("div");
 
         backgroundDiv.classList.add("background-image");
@@ -42,7 +42,7 @@ images.forEach((element, index) => {
 
     newDiv.appendChild(backgroundDiv);
 
-    // Create the second div with the title and text
+    // Creato un secondo div per il titolo e il testo
     const contentDiv = document.createElement("div");
 
     const titleElement = document.createElement("h2");
@@ -64,12 +64,25 @@ images.forEach((element, index) => {
 
 let currentIndex = 0;
 
+let activeDiv = carousel.children[0];
+
 const forwardButton = document.getElementById("right");
+
 
 
 forwardButton.addEventListener("click", function(){
 
+    activeDiv.classList.add("d-none");  // Aggiungo la classe "d-none" all'oggetto attuale
 
+    currentIndex++;  // Incremento l'indice corrente
+    
+    if (currentIndex === images.length) {
+      currentIndex = 0;  // Torno al primo oggetto se si raggiunge la fine dell'array
+    }
+    
+    activeDiv = carousel.children[currentIndex];  // Ottengo il nuovo oggetto attuale
+    
+    activeDiv.classList.remove("d-none");  // Rimuovo la classe "d-none" dal nuovo oggetto attuale
 
 });
 
@@ -78,6 +91,18 @@ const backButton = document.getElementById("left");
 
 backButton.addEventListener("click", function(){
 
+    activeDiv.classList.add("d-none");  // Aggiungo la classe "d-none" all'oggetto attuale
+
+    currentIndex--;  // Decremento l'indice corrente
+    
+    if (currentIndex < 0) {
+      currentIndex = images.length - 1;  // Vado all'ultimo oggetto se si raggiunge l'inizio dell'array
+    }
+    
+    activeDiv = carousel.children[currentIndex];  // Ottengo il nuovo oggetto attuale
+    
+    activeDiv.classList.remove("d-none");  // Rimuovo la classe "d-none" dal nuovo oggetto attuale
+    
 
 
 });
