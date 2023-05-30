@@ -30,3 +30,10 @@ img{
     width: 50%;
     
 }
+.background-image{
+
+    background-size: cover;
+    background-position: center;
+    height: 70%;
+
+}
