@@ -21,48 +21,52 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
-
 images.forEach((element, index) => {
- 
-    const carousel = document.getElementById("carousel")
 
-    const newDiv = document.createElement("div")    //Ho creato 5 div all'intenro del div con classe carousel
+    const carousel = document.getElementById("carousel");
+
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("h-100")
     
+    if (index === 0) {
+        newDiv.classList.add("d-block");
+    } else {
+        newDiv.classList.add("d-none");
+    }
 
+    // Create the first div with the background image
+    const backgroundDiv = document.createElement("div");
 
-if(index === 0){
-    newDiv.classList.add("d-block")
-} else{
-    newDiv.classList.add("d-none")
-}
+        backgroundDiv.classList.add("background-image");
 
-    const imageElement = document.createElement("img"); // ho aggiunto ai div appena creati l'immagine corrispondente in base all'oggetto dell'array images
+    backgroundDiv.style.backgroundImage = `url(${element.image})`;
 
-    imageElement.src = element.image;
+    newDiv.appendChild(backgroundDiv);
 
-    newDiv.appendChild(imageElement);
+    // Create the second div with the title and text
+    const contentDiv = document.createElement("div");
 
-    const titleElement = document.createElement("h2"); // ho aggiunto ai div appena creati il titolo corrispondente in base all'oggetto dell'array images
+    const titleElement = document.createElement("h2");
 
     titleElement.textContent = element.title;
 
-    newDiv.appendChild(titleElement);
-
-    const textElement = document.createElement("p"); // ho aggiunto ai div appena creati il testo corrispondente in base all'oggetto dell'array images
+    const textElement = document.createElement("p");
 
     textElement.textContent = element.text;
 
-    newDiv.appendChild(textElement);
+    contentDiv.appendChild(titleElement);
 
-    carousel.appendChild(newDiv)
+    contentDiv.appendChild(textElement);
 
-})
+    newDiv.appendChild(contentDiv);
+
+    carousel.appendChild(newDiv);
+});
 
 const forwardButton = document.getElementById("right");
 
 forwardButton.addEventListener("click", function(){
 
-
-
+    
 
 })
