@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+section{
+    height: 600px;
+}
+.carousel-container {
+    width: 70%;
+    height: 80%;
+    margin: 0 auto;
+
+    background-color: red;
+}
+#right{
+    bottom: 0px;
+    right: 20%;
+
+    
+    
+}
+#left{
+    bottom: 0px;
+    left: 20%;
+    
+}
