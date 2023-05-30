@@ -22,14 +22,19 @@ const images = [
     }
 ];
 
-images.forEach((element) => {
+images.forEach((element, index) => {
  
     const carousel = document.getElementById("carousel")
 
     const newDiv = document.createElement("div")    //Ho creato 5 div all'intenro del div con classe carousel
+    
 
 
-
+if(index === 0){
+    newDiv.classList.add("d-block")
+} else{
+    newDiv.classList.add("d-none")
+}
 
     const imageElement = document.createElement("img"); // ho aggiunto ai div appena creati l'immagine corrispondente in base all'oggetto dell'array images
 
@@ -50,5 +55,14 @@ images.forEach((element) => {
     newDiv.appendChild(textElement);
 
     carousel.appendChild(newDiv)
+
+})
+
+const forwardButton = document.getElementById("right");
+
+forwardButton.addEventListener("click", function(){
+
+
+
 
 })
