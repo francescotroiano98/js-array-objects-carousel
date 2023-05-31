@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
 }
 section{
     height: 600px;
@@ -12,7 +13,6 @@ section{
     height: 80%;
     margin: 0 auto;
 
-    background-color: red;
 }
 #right{
     bottom: 0px;
@@ -27,13 +27,21 @@ section{
     
 }
 img{
-    width: 50%;
+    object-fit: cover;
     
 }
 .background-image{
 
     background-size: cover;
+   
     background-position: center;
     height: 70%;
 
+}
+h2{
+    margin-top: 1rem;
+    color: white;
+}
+p{
+    color: white;
 }
